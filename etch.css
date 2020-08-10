@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada&display=swap');
+
+:root {
+    --gridSize: 20;
+    --elementColor: white;
+}
+body {
+    margin: 0;
+}
+#container {
+    background: url(Untitled.png);
+    background-size: cover;
+    display: grid;
+    width:100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    grid-template-rows: 10vh 90vh;
+    grid-template-columns: 2fr 5fr 2fr ;
+    gap: 15px;
+    grid-template-areas: 
+    'title title  title'
+    '.      grid    settings';
+}
+#title {
+    font-size: 44px;
+    font-family: 'Lemonada';
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    grid-area: title;
+    margin-top: 10vh;
+}
+#mainGrid {
+    display: grid;
+    grid-template: repeat(var(--gridSize), auto) / repeat(var(--gridSize), auto);
+    width: 75vh;
+    height: 75vh;
+    justify-self: center;
+    cursor: crosshair;
+    border: 2px solid black;
+    grid-area: grid;
+}
+.gridElement {
+    background-color: white;
+}
+.gridBorder {
+    border: 1px dotted rgb(146, 146, 146);
+}
+#settings {
+    grid-area: settings;
+    justify-self: center;
+    margin-right: auto;
+}
+h4 {
+    font-family: 'Lemonada';
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    margin-top: 0;
+}
+#gridSettings {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    justify-content: center;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: #e6add6;
+}
+.settings {
+    font-family: 'Lemonada';
+    border-radius: 18px;
+    border: 2px solid black;
+    padding: 5px;
+    background-color: #e4fdeb;
+    color: black;
+    justify-self: center;
+    width: 8vw;
+    height: 6vh;
+}
+#newGrid {
+    display: flex;
+    margin-top: 20px;
+}
+#newGrid *:focus {
+    outline: none;
+}
+#createGrid {
+    border: none;
+    background-color: transparent;
+}
+#inputSize {
+    font-family: 'Lemonada';
+    width: 39px;
+    height: 30px;
+    align-self: center;
+    font-size: 14px;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 1px 1px 2px black;
+}
+#rainbow, #border, #resetGrid {
+    outline: none;
+}
+#rainbow:hover, #border:hover, #newGrid:hover, #resetGrid:hover, #color:hover{
+    background-color: #c5f0d2;
+    box-shadow: 3px 3px 3px black;
+}
+.rainbow {
+    background: linear-gradient(to bottom right, red,orange,yellow,green,blue,indigo,violet);
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+span {
+    font-family: 'Lemonada';
+    font-size: 15px;
+    align-self: center;
+}
+#erase {
+    font-weight: bold;
+    text-shadow: 1px 1px 1px white;
+}
+#colorDiv {
+    display: flex;
+    justify-self: center;
+}
+#colorspan {
+    margin-right: 10px;
+    text-shadow: 1px 1px 0 white;
+    font-size: 18px;
+}
+#color {
+    justify-self: center;
+    background-color: #e4fdeb;
+    border-radius: 8px;
+    height: 50px;
+}
+
+@media screen and (min-width: 950px) and (max-width: 1400px) {
+    #container {
+        grid-template-columns: 30px 5fr 1fr ;
+        gap: 10px;
+    }
+    #settings {
+        margin-left: -30px;
+        margin-right: 10px;
+    }
+    .settings {
+        font-size: 12px;
+        border-radius: 18px;
+        border: 2px solid black;
+        padding: 2px;
+        width: 140px;
+    }
+}
+@media screen and (max-width: 949px) {
+    #container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 5vh 75vh 5vh;
+        grid-template-areas: 
+        'title' 'grid''settings';
+    }
+    #settings {
+        height: 3vh;
+        margin-left: 25px;
+    }
+    #newGrid {
+        align-self: center;
+        margin-bottom: 10px;
+    }
+    #gridSettings {
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+        padding: 0;
+    }
+    h4 {
+        display: none;
+    }
+    #title {
+        margin-top: 0;
+    }
+    .settings {
+        height: 5vh;
+        width: 100px;
+        font-size: 10px;
+    }
+    #mainGrid {
+        width: 65vh;
+        height: 65vh;
+    }
+}
