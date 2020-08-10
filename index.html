@@ -9,24 +9,23 @@
 <body ondragstart="return false;" ondrop="return false;">
     <div id="container">
         <header id="title">Etch-a-Sketch</header> 
-        <div id="mainGrid">
-        </div>
-        <div id="settings">
-            <h4>Settings</h4>
-            <div id="gridSettings">
-                <div id="newGrid" class="settings">
-                    <button id="createGrid" class="settings" >(N) New Grid</button>
-                    <input type="number" pattern="[0-9]*" id="inputSize" value="16">
-                </div>
-                <button class="settings" id="resetGrid">(C) Clear</button>
-                <button class="settings" id="rainbow">(R) Rainbow</button>
-                <button class="settings" id="border">(B) Borders</button>
-                <div id="colorDiv">
-                    <span id="colorspan">Color</span>
-                    <input id="color" type="color">
-                </div>
-                <span id="erase">hold shift <br> to erase</span>
+        <div id="flexme">
+            <div id="mainGrid">
             </div>
+                <div id="gridSettings">
+                    <div id="newGrid" class="settings">
+                        <button id="createGrid" class="settings" >(N) New Grid</button>
+                        <input type="number" pattern="[0-9]*" id="inputSize" value="16">
+                    </div>
+                    <button class="settings" id="resetGrid">(C) Clear</button>
+                    <button class="settings" id="rainbow">(R) Rainbow</button>
+                    <button class="settings" id="border">(B) Borders</button>
+                    <div id="colorDiv">
+                        <span id="colorspan">Color</span>
+                        <input id="color" type="color">
+                    </div>
+                    <span id="erase">hold shift <br> to erase</span>
+                </div>
         </div>
     </div>
     <script src="etch.js"></script>
